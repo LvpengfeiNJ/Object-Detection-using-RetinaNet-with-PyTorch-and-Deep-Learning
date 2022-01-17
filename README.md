@@ -20,3 +20,18 @@ cd RetinaNet
 python detect_videos.py --input input/video2.mp4
 
 ```
+[](./RetinaNet/output/image2_800_t60.jpg)
+[](./RetinaNet/output/video2_800_t60.mp4)
+
+
+## The input and output format for PyTorch RetinaNet object detection model
+The pre-trained RetinaNet model from PyTorch follows almost the same approach for input and output of data as any other pre-trianed PyTorch model for object detection.
+
+It expects an input image of the format '[C, H, W]', that is (channels, height, and width). And we will of course have to provide a batch size as well. This batch size will amount to the number of images in one batch. So, the final input format will be '[N, C, H, W]'. Also, the pixel values of each image should be between '0-1'.
+
+What we need to focus on is the output format from the RetinaNet model. It outputs a list containing a dictionary which in-turn contains the resulting tensors. The format is 'List[Dict[Tensor]]'. The 'Dict' contains the following keys:
+- boxes ('FloatTensor[N, 4]'): the predicted boxes in '[x1, y1, x2, y2]' format, with values between '0' and 'H' and '0' and 'W'
+- labels ('Int64Tensor[N]'): the predicted labels for each image
+- scores ('Tensor[N]'): the scores or each prediction
+
+[ref.](https://debuggercafe.com/object-detection-using-retinanet-with-pytorch-and-deep-learning/)
