@@ -20,8 +20,8 @@ cd RetinaNet
 python detect_videos.py --input input/video2.mp4
 
 ```
-[](./RetinaNet/output/image2_800_t60.jpg)
-[](./RetinaNet/output/video2_800_t60.mp4)
+![1](./RetinaNet/output/image2_800_t60.jpg)
+![2](./RetinaNet/output/video2_800_t60.mp4)
 
 
 ## The input and output format for PyTorch RetinaNet object detection model
